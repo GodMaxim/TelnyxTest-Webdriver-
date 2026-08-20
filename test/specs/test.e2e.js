@@ -219,7 +219,7 @@ describe('Telnyx test', () => {
         await shopPage.verifyCurrencyIsHryvnia();
     })
 
-    it.only('Verify "Subscribe to Automated Emails" on the Release Notes Page', async() => {
+    it('Verify "Subscribe to Automated Emails" on the Release Notes Page', async() => {
         await homePage.clickOnReleaseBtn()
         await releaseNotesPage.setEmailInput('myemail@gmail.com')
         await releaseNotesPage.subscribe.click()
