@@ -26,6 +26,7 @@ The project follows a clean, modular structure to ensure maintainability and sca
 - wdio.chrome.conf.js: Configuration specifically for Chrome browser execution.
 - wdio.firefox.conf.js: Configuration specifically for Firefox browser execution.
 - package.json: Lists project dependencies and defines custom npm scripts for test execution.
+- Dockerfile: Docker image configuration for isolated environment execution.
 - README.md: This documentation file.
 
 ## Key Features
@@ -36,8 +37,18 @@ The project follows a clean, modular structure to ensure maintainability and sca
 
 ## Configuration
 The framework uses dynamic headless mode configuration:
-* Locally: `headless: false` for visual debugging.
-* In CI: `headless: true` for efficient and stable server-side execution.
+* Locally: headless: false for visual debugging.
+* In CI/Docker: headless: true for efficient and stable execution.
+
+## Docker Setup
+This project is containerized to ensure consistent testing environments across all machines and CI pipelines.
+```bash
+# Build the Docker image
+docker build -t telnyx-tests .
+
+# Run tests in the container
+docker run --rm telnyx-tests
+```
 
 ## CI/CD Pipeline
 The project is automatically tested on every push to the main or master branches. The pipeline includes:
