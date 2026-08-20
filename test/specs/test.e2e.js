@@ -7,7 +7,7 @@ import shopPage from '../pages/ShopPage.js'
 import voiceAIPage from '../pages/VoiceAIPage.js'
 import pricingAIPage from '../pages/PricingAIPage.js'
 import logInPage from '../pages/LoginPage.js'
-import sesendPage from '../pages/ResendPage.js'
+import resendPage from '../pages/ResendPage.js'
 import communicationPage from '../pages/CommunicationPage.js'
 import contactUsPage from '../pages/ContactUsPage.js'
 import integrationsPage from '../pages/IntegrationsPage.js'
@@ -45,7 +45,7 @@ describe('Telnyx test', () => {
         await homePage.clickOnOurNetworkBtn()
         await expect(browser).toHaveUrl('https://telnyx.com/our-network')
         await ourNetworkPage.ourNetworkTitle.waitForDisplayed({ timeout: 5000 })
-        await expect(ourNetworkPage.OurNetworkTitle).toHaveText('Our private, global network')
+        await expect(ourNetworkPage.ourNetworkTitle).toHaveText('Our private, global network')
         await ourNetworkPage.clickOnSignUpBtn()
         await expect(browser).toHaveUrl('https://telnyx.com/sign-up')
     });
@@ -78,12 +78,11 @@ describe('Telnyx test', () => {
 
     it('Verify Dynamic Price Updates for Voice AI Options', async () => {
         await homePage.clickOnVoiceAIBtn()
-        await voiceAIPage.voiceAITitle.scrollIntoView()
-        await voiceAIPage.voiceAITitle.waitForDisplayed({ timeout: 5000 })
+        await voiceAIPage.seeVoiceAiTitle()
         await expect(voiceAIPage.voiceAITitle).toHaveText('Pricing you control')
         await voiceAIPage.clickOnSeePricingBtn()
         await pricingAIPage.cost.scrollIntoView()
-        await expect(pricingAIPage.Cost).toHaveText('$0.056*')
+        await expect(pricingAIPage.cost).toHaveText('$0.056*')
         await pricingAIPage.clickOnPremiumBtn()
         await expect(pricingAIPage.cost).toHaveText('$0.06*')
         await pricingAIPage.clickOnCallRecordingBtn()
@@ -96,10 +95,10 @@ describe('Telnyx test', () => {
         await homePage.clickOnLoginBtn()
         await expect(logInPage.logInTitle).toHaveText('Welcome Back')
         await expect(browser).toHaveUrl('https://portal.telnyx.com/#/login/sign-in')
-        await logInPage.sesendBtn.scrollIntoView()
+        await logInPage.resendBtn.scrollIntoView()
         await logInPage.clickOnResendBtn()
-        await sesendPage.setEmailInput('myemail@gmail.com')
-        await sesendPage.clickOnSubmitBtn()
+        await resendPage.setEmailInput('myemail@gmail.com')
+        await resendPage.clickOnSubmitBtn()
         await expect(resendPage.successMessage).toHaveText('If your email address exists', { containing: true } )
     })
 

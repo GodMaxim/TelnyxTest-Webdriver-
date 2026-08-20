@@ -91,7 +91,9 @@ export const config = {
     // baseUrl: 'http://localhost:8080',
     //
     // Default timeout for all waitFor* commands.
-    waitforTimeout: 10000,
+
+    pageLoadTimeout: 30000,
+    waitforTimeout: 20000,
     //
     // Default timeout in milliseconds for request
     // if browser driver or grid doesn't send response
@@ -113,6 +115,10 @@ export const config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
+    mochaOpts: {
+        ui: 'bdd',
+        timeout: 60000
+    },
     
     //
     // The number of times to retry the entire specfile when it fails as a whole

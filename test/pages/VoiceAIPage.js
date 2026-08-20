@@ -20,7 +20,7 @@ class VoiceAIPage {
     async verifyAIResponse(expectedText) {
     await this.aIResponse.waitForDisplayed({ timeout: 10000 });
     await this.aIResponse.scrollIntoView();
-    await expect(this.AIResponse).toHaveText(expect.stringContaining(expectedText));
+    await expect(this.aIResponse).toHaveText(expect.stringContaining(expectedText));
 }
 
 async switchToSpanish() {
@@ -29,6 +29,10 @@ async switchToSpanish() {
         await this.spanishOption.click()
 }
 
+async seeVoiceAiTitle() {
+    await this.voiceAITitle.scrollIntoView()
+    await this.voiceAITitle.waitForDisplayed({ timeout: 5000 })
+}
 
 }
 export default new VoiceAIPage()
