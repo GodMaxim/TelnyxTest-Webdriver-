@@ -4,7 +4,7 @@ class PricingSpeechPage {
     get textPricing () { return $('#speech-to-text-pricing')}
     get euroOption () { return $('//span[text()="EUR"]') }
 
-    async SwitchCurrency() {
+    async switchCurrency() {
         await expect(this.currencyBtn).toBeClickable()
         await this.currencyBtn.click()
         await expect(this.euroOption).toBeClickable();

@@ -26,7 +26,7 @@ jobs:
 
       - name: Run WebdriverIO tests (Chrome Headless)
         run: npm run test:chrome
-        continue-on-error: true # Чтобы отчет сгенерировался даже если часть тестов упала
+        continue-on-error: true 
 
       - name: Generate Allure Report
         run: npm run allure:generate

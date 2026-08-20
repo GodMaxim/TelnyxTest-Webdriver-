@@ -141,13 +141,13 @@ describe('Telnyx test', () => {
     it('Verify Negative Scenario: Security Verification Blocks Automated Sign-In Link', async () => {
         await homePage.clickOnLoginBtn()
         await logInPage.setEmailInput('myemail@gmail.com')
-        await logInPage.SendSignIn.click()
+        await logInPage.sendSignIn.click()
         await expect(logInPage.failMessage).toHaveText('Security verification failed. Please refresh and try again.')
     })
 
     it('Verify Dynamic Price Updates in "Price Your Workload" Section', async () => {
         await homePage.priceSection.scrollIntoView()
-        await expect(homePage.Price).toHaveText('$76,800')
+        await expect(homePage.price).toHaveText('$76,800')
         await homePage.setConversationsPM('500000')
         await expect(homePage.price).toHaveText('$80,000')
         await homePage.setAverageMins('10')
@@ -163,7 +163,7 @@ describe('Telnyx test', () => {
         await expect(applyPage.title).toHaveText('Join the Telnyx partner ecosystem and unlock new revenue streams', { containing: true } )
         await browser.back()
         await partnersPage.clickButtonWithoutTarget(partnersPage.becomePartner2)
-        await expect(applyPage.Title).toHaveText('Join the Telnyx partner ecosystem and unlock new revenue streams', { containing: true } )
+        await expect(applyPage.title).toHaveText('Join the Telnyx partner ecosystem and unlock new revenue streams', { containing: true } )
         await browser.back()
         await partnersPage.clickButtonWithoutTarget(partnersPage.becomePartner3)
         await expect(applyPage.title).toHaveText('Join the Telnyx partner ecosystem and unlock new revenue streams', { containing: true } )

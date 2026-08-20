@@ -5,7 +5,7 @@ class HomePage {
     get storiesBtn () { return $('a=Customer stories')}
     get shopBtn () { return $('a[href="https://shop.telnyx.com/"]') }
     get voiceAIBtn () { return $('footer a[href="/products/voice-ai-agents"]') }
-    get loginBtn () { return $('a[href="https://portal.telnyx.com"]') }
+    get logInBtn () { return $('a[href="https://portal.telnyx.com"]') }
     get communicationBtn() { return $('a[href="/global-coverage"]')}
     get developersBtn() { return $('button*=Developers')}
     get integrationsBtn () { return $('a=Integrations')}
