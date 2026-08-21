@@ -97,7 +97,7 @@ class HomePage {
 
     async clickOnPartnersBtn() {
         await this.partnersBtn.waitForExist({ timeout: 5000 })
-        await browser.execute(el => el.click(), await this.partnersBtn)
+       await browser.execute(el => el.click(), await this.partnersBtn)
     }
 
     async clickOnSolutionsBtn() {

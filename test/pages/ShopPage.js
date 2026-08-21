@@ -13,7 +13,7 @@ class ShopPage {
         await this.emailInput.setValue(email)
     }
 
-    async clickOnSerachBtn() {
+    async clickOnSearchBtn() {
         await this.searchBtn.click()
     }
 
@@ -30,7 +30,6 @@ class ShopPage {
     async cardIsVisible() {
         await this.card.waitForDisplayed({
             timeout: 10000,
-            timeoutMsg: 'Товарные карточки не прогрузились на странице'
         });
         await this.card.scrollIntoView();
         await expect(this.card).toBeDisplayed();

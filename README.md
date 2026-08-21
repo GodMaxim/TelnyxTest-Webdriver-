@@ -21,7 +21,8 @@ The project follows a clean, modular structure to ensure maintainability and sca
 
 - .github/workflows/main.yml: Configuration for the CI/CD pipeline.
 - test/pages/: Contains Page Object Model classes representing different pages of the Telnyx website (e.g., HomePage, VoiceAIPage, PricingAIPage, SignUpPage).
-- test/specs/: Contains the actual test specifications (e.g., test.e2e.js) that execute the user journeys.
+- test/specs/: Contains the actual test specifications (e.g., test.e2e.js, auth.spec.js, pricing.spec.js, shop.spec.js, voic-ai.spec.js) that execute the user journeys.
+- helpers/setup.js : Contains cookies accept action before each test case
 - wdio.conf.js: The base configuration file for WebdriverIO.
 - wdio.chrome.conf.js: Configuration specifically for Chrome browser execution.
 - wdio.firefox.conf.js: Configuration specifically for Firefox browser execution.

@@ -1,5 +1,5 @@
 class LoginPage {
-    get loginTitle () { return $('h1') }
+    get logInTitle () { return $('h1') }
     get resendBtn () { return $('a[href="https://portal.telnyx.com/#/login/resend-email"]')}
     get sendSignIn () { return $('button=Send me sign-in link')}
     get failMessage () { return $('div[role="alert"] .MuiAlert-message')}
